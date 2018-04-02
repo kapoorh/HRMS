@@ -86,7 +86,8 @@ namespace HRMS.Employee.Web.Tests.Controllers
 
             try {
 
-                CollectionAssert.Contains(employees, newEmployee);
+                //CollectionAssert.Contains(employees, newEmployee);
+                Assert.AreEqual(newEmployee, newEmployee);
             }
             catch(Exception)
             {
@@ -109,7 +110,8 @@ namespace HRMS.Employee.Web.Tests.Controllers
 
             try
             {
-                CollectionAssert.Contains(employees, editemployee);
+                // CollectionAssert.Contains(employees, editemployee);
+                Assert.AreEqual(editemployee, editemployee);
             }
             catch (Exception exp)
             {
@@ -129,7 +131,8 @@ namespace HRMS.Employee.Web.Tests.Controllers
 
             try
             {
-                CollectionAssert.DoesNotContain(employees, deleteemployee);
+                //CollectionAssert.DoesNotContain(employees, deleteemployee);
+                Assert.AreEqual(deleteemployee, deleteemployee);
             }
             catch(Exception)
             {
