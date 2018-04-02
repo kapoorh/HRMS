@@ -82,7 +82,8 @@ namespace HRMS.Employee.Web.Tests.Controllers
         public void Create()
         {
             
-            EmployeesModel newEmployee = new EmployeesModel { ID = 6, First_Name = "witekar", Last_Name = "Rao", Email = "Weeta@hotmail.com", Dob = Convert.ToDateTime("12/12/1975"), Gender = "Male", Address = "New Link Road", City = "Saran", State = "MHS", Pin = "1231" };
+            EmployeesModel newEmployee = new EmployeesModel { ID = 6, First_Name = "Yashvi", Last_Name = "Khan", Email = "Yashvi@hotmail.com",
+                Dob = Convert.ToDateTime("12/12/1989"), Gender = "Female", Address = "Amrapali  royal", City = "Noida", State = "UP1", Pin = "1231" };
 
             // Lets call the action method now
             controller.Create(newEmployee);
