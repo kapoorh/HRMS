@@ -74,4 +74,16 @@
     <pin>1231</pin>
     <adress>MG lane road</adress>
   </employee>
+  <employee>
+    <ID>7</ID>
+    <first_name>Sushant</first_name>
+    <last_name>Sharma</last_name>
+    <email>s.sharma@gmail.com</email>
+    <dob>10/10/1978</dob>
+    <gender>Male</gender>
+    <address>Noida</address>
+    <city>Noida</city>
+    <state>UP</state>
+    <pin>20130</pin>
+  </employee>
 </Employees>
