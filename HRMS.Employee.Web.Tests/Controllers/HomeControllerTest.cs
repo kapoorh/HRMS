@@ -13,11 +13,11 @@ namespace HRMS.Employee.Web.Tests.Controllers
     [TestFixture]
     public class HomeControllerTest
     {
-        EmployeesModel student1 = null;
-        EmployeesModel student2 = null;
-        EmployeesModel student3 = null;
-        EmployeesModel student4 = null;
-        EmployeesModel student5 = null;
+        EmployeesModel employee1 = null;
+        EmployeesModel employee2 = null;
+        EmployeesModel employee3 = null;
+        EmployeesModel employee4 = null;
+        EmployeesModel employee5 = null;
 
         List<EmployeesModel> employeeModelList = null;
         DummyEmployeeRepository employeeRepository = null;
@@ -30,43 +30,37 @@ namespace HRMS.Employee.Web.Tests.Controllers
 
         public HomeControllerTest()
         {
-            student1 = new EmployeesModel { ID = 1,   First_Name="Sweety", Last_Name="Sharma",Email="Sara@hotmail.com",Dob=Convert.ToDateTime("12/12/1973"),Gender="Female",Address="New Link Road",City="Saran",State="MHS", Pin="1231" };
-            student2 = new EmployeesModel { ID = 2, First_Name = "Jatin", Last_Name = "Kumar", Email = "Jatin@hotmail.com", Dob = Convert.ToDateTime("12/12/1972"), Gender = "Male", Address = "New Link Road", City = "Saran", State = "MHS", Pin = "1231" };
-            student3 = new EmployeesModel { ID = 3, First_Name = "Sweta", Last_Name = "shah", Email = "Swta@hotmail.com", Dob = Convert.ToDateTime("12/12/1971"), Gender = "Female", Address = "New Link Road", City = "Saran", State = "MHS", Pin = "1231" };
-            student4 = new EmployeesModel { ID = 4, First_Name = "yasmin", Last_Name = "Sheikh", Email = "Yasmin@hotmail.com", Dob = Convert.ToDateTime("12/12/1978"), Gender = "Female", Address = "New Link Road", City = "Saran", State = "MHS", Pin = "1231" };
-            student5 = new EmployeesModel { ID = 5, First_Name = "weetetar", Last_Name = "Rao", Email = "Weeta@hotmail.com", Dob = Convert.ToDateTime("12/12/1975"), Gender = "Male", Address = "New Link Road", City = "Saran", State = "MHS", Pin = "1231" };
+            employee1 = new EmployeesModel { ID = 1,   First_Name="Sweety", Last_Name="Sharma",Email="Sara@hotmail.com",Dob=Convert.ToDateTime("12/12/1973"),Gender="Female",Address="New Link Road",City="Saran",State="MHS", Pin="1231" };
+            employee2 = new EmployeesModel { ID = 2, First_Name = "Jatin", Last_Name = "Kumar", Email = "Jatin@hotmail.com", Dob = Convert.ToDateTime("12/12/1972"), Gender = "Male", Address = "New Link Road", City = "Saran", State = "MHS", Pin = "1231" };
+            employee3 = new EmployeesModel { ID = 3, First_Name = "Sweta", Last_Name = "shah", Email = "Swta@hotmail.com", Dob = Convert.ToDateTime("12/12/1971"), Gender = "Female", Address = "New Link Road", City = "Saran", State = "MHS", Pin = "1231" };
+            employee4 = new EmployeesModel { ID = 4, First_Name = "yasmin", Last_Name = "Sheikh", Email = "Yasmin@hotmail.com", Dob = Convert.ToDateTime("12/12/1978"), Gender = "Female", Address = "New Link Road", City = "Saran", State = "MHS", Pin = "1231" };
+            employee5 = new EmployeesModel { ID = 5, First_Name = "weetetar", Last_Name = "Rao", Email = "Weeta@hotmail.com", Dob = Convert.ToDateTime("12/12/1975"), Gender = "Male", Address = "New Link Road", City = "Saran", State = "MHS", Pin = "1231" };
 
             employeeModelList = new List<EmployeesModel>
             {
-                  student1,
-                  student2,
-                  student3,
-                  student4
-                 // student5
+                  employee1,
+                  employee2,
+                  employee3,
+                  employee4
             };
 
             employeeRepository = new DummyEmployeeRepository(employeeModelList);
             unitofwork = new unitofwork(employeeRepository);
-            controller = new EmployeeController(unitofwork);
-   
+            controller = new EmployeeController(unitofwork);   
         }
-
 
 
         [Test]
         public void Index()
         {
-
-
             ViewResult result = controller.Index() as ViewResult;
             var model = (List<EmployeesModel>)result.ViewData.Model;
 
             // Assert
-            CollectionAssert.Contains(model, student1);
-            CollectionAssert.Contains(model, student2);
-            CollectionAssert.Contains(model, student3);
-            CollectionAssert.Contains(model, student4);
-                        
+            CollectionAssert.Contains(model, employee1);
+            CollectionAssert.Contains(model, employee2);
+            CollectionAssert.Contains(model, employee3);
+            CollectionAssert.Contains(model, employee4);                       
 
         }
 
@@ -74,7 +68,7 @@ namespace HRMS.Employee.Web.Tests.Controllers
         public void Details()
         {
             ViewResult result = controller.Details(1) as ViewResult;
-            Assert.AreEqual(result.Model, student1);
+            Assert.AreEqual(result.Model, employee1);
 
         }
 
@@ -82,8 +76,7 @@ namespace HRMS.Employee.Web.Tests.Controllers
         public void Create()
         {
             
-            EmployeesModel newEmployee = new EmployeesModel { ID = 6, First_Name = "Yashvi", Last_Name = "Khan", Email = "Yashvi@hotmail.com",
-                Dob = Convert.ToDateTime("12/12/1989"), Gender = "Female", Address = "Amrapali  royal", City = "Noida", State = "UP1", Pin = "1231" };
+            EmployeesModel newEmployee = new EmployeesModel { ID = 6, First_Name = "witekar", Last_Name = "Rao", Email = "Weeta@hotmail.com", Dob = Convert.ToDateTime("12/12/1975"), Gender = "Male", Address = "New Link Road", City = "Saran", State = "MHS", Pin = "1231" };
 
             // Lets call the action method now
             controller.Create(newEmployee);
@@ -106,17 +99,17 @@ namespace HRMS.Employee.Web.Tests.Controllers
         public void Edit()
         {
             // Lets create a valid student objct to add into
-            EmployeesModel editstudent = new EmployeesModel { ID = 4, First_Name = "yasmin", Last_Name = "Sheikh", Email = "Yasmin@hotmail.com", Dob = Convert.ToDateTime("12/12/1978"), Gender = "Female", Address = "MG Road", City = "Mahad", State = "MHS", Pin = "1231" };
+            EmployeesModel editemployee = new EmployeesModel { ID = 4, First_Name = "yasmin", Last_Name = "Sheikh", Email = "Yasmin@hotmail.com", Dob = Convert.ToDateTime("12/12/1978"), Gender = "Female", Address = "MG Road", City = "Mahad", State = "MHS", Pin = "1231" };
 
             // Lets call the action method now
-            controller.Edit(4, editstudent);
+            controller.Edit(4, editemployee);
 
             // get the list of students
-            List<EmployeesModel> students = employeeRepository.GetEmployees();
+            List<EmployeesModel> employees = employeeRepository.GetEmployees();
 
             try
             {
-                CollectionAssert.Contains(students, editstudent);
+                CollectionAssert.Contains(employees, editemployee);
             }
             catch (Exception exp)
             {
@@ -130,13 +123,13 @@ namespace HRMS.Employee.Web.Tests.Controllers
             int id = 2;
             // Lets call the action method now
             controller.Delete(id);
-            EmployeesModel deletestudent = employeeRepository.GetEmployees().SingleOrDefault(x => x.ID == id);
-            // get the list of students
-            List<EmployeesModel> students = employeeRepository.GetEmployees();
+            EmployeesModel deleteemployee = employeeRepository.GetEmployees().SingleOrDefault(x => x.ID == id);
+            // get the list of employees
+            List<EmployeesModel> employees = employeeRepository.GetEmployees();
 
             try
             {
-                CollectionAssert.DoesNotContain(students, deletestudent);
+                CollectionAssert.DoesNotContain(employees, deleteemployee);
             }
             catch(Exception)
             {
