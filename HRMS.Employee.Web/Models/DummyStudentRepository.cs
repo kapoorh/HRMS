@@ -15,7 +15,7 @@ namespace employeeCRUD.Models
             this.employeemodellist = employee;
         }
 
-        public List<EmployeesModel> Getemployees()
+        public List<EmployeesModel> GetEmployees()
         {
             return employeemodellist;
         }
@@ -37,11 +37,6 @@ namespace employeeCRUD.Models
         {
             EmployeesModel employeetoDel = employeemodellist.SingleOrDefault(x => x.ID == id);
             employeemodellist.Remove(employeetoDel);
-        }
-
-        public List<EmployeesModel> GetEmployees()
-        {
-            throw new NotImplementedException();
-        }
+        }       
     }
 }
