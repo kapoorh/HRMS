@@ -1,0 +1,108 @@
+﻿@model IEnumerable<HRMS.Employee.Web.Models.EmployeesModel>
+
+@{
+    ViewBag.Title = "HRMS Employee Portal";
+}
+<style type="text/css">
+    .TFtable {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .TFtable td {
+            padding: 7px;
+            border: #4e95f4 1px solid;
+        }
+        /* provide some minimal visual accomodation for IE8 and below */
+        .TFtable tr {
+            background: #b8d1f3;
+        }
+            /*  Define the background color for all the ODD background rows  */
+            .TFtable tr:nth-child(odd) {
+                background: #b8d1f3;
+            }
+            /*  Define the background color for all the EVEN background rows  */
+            .TFtable tr:nth-child(even) {
+                background: #dae5f4;
+            }
+</style>
+
+
+
+<div style="font-family:Arial">
+<h2>Employee Information</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="TFtable"  border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pin)
+        </th>
+        <th>Action </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+</div>

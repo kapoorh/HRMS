@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Employees>
+  <employee>
+    <ID>1</ID>
+    <first_name>Tara</first_name>
+    <last_name>Sharma</last_name>
+    <email>tara@hotmail.com</email>
+    <dob>12/12/1990</dob>
+    <gender>Female</gender>
+    <address>1231 Lane 1</address>
+    <city>Goa</city>
+    <state>Maharashtra</state>
+    <pin>12341</pin>
+    <adress>1231 Lane 1</adress>
+  </employee>
+  <employee>
+    <ID>2</ID>
+    <first_name>Vipin</first_name>
+    <last_name>Ahuja</last_name>
+    <email>vipin@hotmail.com</email>
+    <dob>12/12/1988</dob>
+    <gender>Male</gender>
+    <address>1231 Lane 13</address>
+    <city>Solapur</city>
+    <state>Maharashtra</state>
+    <pin>4123</pin>
+  </employee>
+  <employee>
+    <ID>3</ID>
+    <first_name>Goldi</first_name>
+    <last_name>Mishra</last_name>
+    <email>goldi@hotmail.com</email>
+    <dob>12/12/2012</dob>
+    <gender>Female</gender>
+    <address>Lohita road</address>
+    <city>Pune</city>
+    <state>Maharashtra</state>
+    <pin>20130</pin>
+  </employee>
+  <employee>
+    <ID>4</ID>
+    <first_name>Shruti</first_name>
+    <last_name>Khan</last_name>
+    <email>shruti.khan@hotmail.com</email>
+    <dob>12/12/1994</dob>
+    <gender>Female</gender>
+    <address>Plano</address>
+    <city>Gahziabad</city>
+    <state>UP</state>
+    <pin>20101</pin>
+  </employee>
+  <employee>
+    <ID>5</ID>
+    <first_name>Gaurav</first_name>
+    <last_name>Jain</last_name>
+    <email>gaurav.jain@hotmail.com</email>
+    <dob>12/12/1972</dob>
+    <gender>Male</gender>
+    <address>Loadhi Garden</address>
+    <city>Udaipur</city>
+    <state>UP</state>
+    <pin>20121</pin>
+  </employee>
+  <employee>
+    <ID>6</ID>
+    <first_name>Yashvi</first_name>
+    <last_name>Khan</last_name>
+    <email>Yashvi@hotmail.com</email>
+    <dob>12/12/1989</dob>
+    <gender>Female</gender>
+    <address>Amrapali  royal</address>
+    <city>Noida</city>
+    <state>UP1</state>
+    <pin>1231</pin>
+    <adress>MG lane road</adress>
+  </employee>
+</Employees>
