@@ -123,6 +123,7 @@ namespace HRMS.Employee.Web.Tests.Controllers
         public void Delete()
         {
             int id = 2;
+
             // Lets call the action method now
             controller.Delete(id);
             EmployeesModel deleteemployee = employeeRepository.GetEmployees().SingleOrDefault(x => x.ID == id);
