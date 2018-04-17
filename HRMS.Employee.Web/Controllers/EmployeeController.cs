@@ -26,8 +26,7 @@ namespace HRMS.Employee.Web.Controllers
         }
 
         public ActionResult Details(int id = 0)
-        {
-            
+        {            
             List<EmployeesModel> allEmployees = unitofWork.employeeRepository.GetEmployees();
             EmployeesModel employeemodeldet = allEmployees.SingleOrDefault(x => x.ID == id);
             if (employeemodeldet == null)
